@@ -106,13 +106,20 @@ class Bindings extends DataMap {
 		const bindings = this.nodes.getForCompute( computeNode ).bindings;
 		const computeNodeData = this.get( computeNode );
 
-		if ( computeNodeData.initialized !== true ) {
+		if ( computeNodeData.initialized !== true || computeNodeData.bindings !== bindings ) {
 
-			// bind groups are created once per object
+			// bind groups are created once per compute node version
+
+			if ( computeNodeData.bindings !== undefined ) {
+
+				this._destroyBindings( computeNodeData.bindings );
+
+			}
 
 			this._createBindings( bindings );
 
 			computeNodeData.initialized = true;
+			computeNodeData.bindings = bindings;
 
 		}
 
@@ -149,7 +156,8 @@ class Bindings extends DataMap {
 	 */
 	deleteForCompute( computeNode ) {
 
-		const bindings = this.nodes.getForCompute( computeNode ).bindings;
+		const computeNodeData = this.get( computeNode );
+		const bindings = computeNodeData.bindings || this.nodes.getForCompute( computeNode ).bindings;
 
 		this._destroyBindings( bindings );
 
@@ -202,7 +210,7 @@ class Bindings extends DataMap {
 
 					} else if ( binding.isSampler ) {
 
-						this.textures.updateSampler( binding.texture );
+						this.textures.updateSampler( binding );
 
 					} else if ( binding.isStorageBuffer ) {
 
@@ -254,6 +262,23 @@ class Bindings extends DataMap {
 						this.info.destroyUniformBuffer( binding );
 
 						// release arrays
+
+						binding.release();
+
+					} else if ( binding.isSampler ) {
+
+						if ( binding.isSampledTexture !== true ) {
+
+							this.backend.destroySampler( binding );
+
+						} else if ( binding.texture !== null ) {
+
+							// untrack destroyed bind group from its texture
+
+							const textureData = this.textures.get( binding.texture );
+							if ( textureData.bindGroups !== undefined ) textureData.bindGroups.delete( bindGroup );
+
+						}
 
 						binding.release();
 
@@ -410,7 +435,7 @@ class Bindings extends DataMap {
 
 				if ( updated ) {
 
-					const samplerKey = this.textures.updateSampler( binding.texture );
+					const samplerKey = this.textures.updateSampler( binding );
 
 					if ( binding.samplerKey !== samplerKey ) {
 

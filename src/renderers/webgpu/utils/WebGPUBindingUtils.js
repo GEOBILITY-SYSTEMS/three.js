@@ -3,10 +3,18 @@ import {
 	GPUSamplerBindingType, GPUShaderStage
 } from './WebGPUConstants.js';
 
-import { FloatType, IntType, UnsignedIntType, Compatibility } from '../../../constants.js';
+import { FloatType, IntType, UnsignedIntType, Compatibility, UnsignedShortType, ShortType } from '../../../constants.js';
 import { NodeAccess } from '../../../nodes/core/constants.js';
 import { isTypedArray, error } from '../../../utils.js';
 import { hashString } from '../../../nodes/core/NodeUtils.js';
+
+import GPUBindGroupDescriptor from '../descriptors/GPUBindGroupDescriptor.js';
+import GPUBufferDescriptor from '../descriptors/GPUBufferDescriptor.js';
+import GPUTextureViewDescriptor from '../descriptors/GPUTextureViewDescriptor.js';
+
+const _bindGroupDescriptor = new GPUBindGroupDescriptor();
+const _bufferDescriptor = new GPUBufferDescriptor();
+const _viewDescriptor = new GPUTextureViewDescriptor();
 
 /**
  * Class representing a WebGPU bind group layout.
@@ -206,12 +214,26 @@ class WebGPUBindingUtils {
 			const isTyped = isTypedArray( array );
 			const byteOffsetFactor = isTyped ? 1 : array.BYTES_PER_ELEMENT;
 
+			// Update ranges arrive sorted and non-overlapping which makes
+			// it easy to merge contiguous ranges.
+
+			let start = updateRanges[ 0 ].start; // start of the current merged range
+
 			for ( let i = 0, l = updateRanges.length; i < l; i ++ ) {
 
 				const range = updateRanges[ i ];
+				const next = updateRanges[ i + 1 ];
 
-				const dataOffset = range.start * byteOffsetFactor;
-				const size = range.count * byteOffsetFactor;
+				const end = range.start + range.count; // exclusive end of the current range
+
+				// keep merging while the next range is contiguous
+
+				if ( next !== undefined && next.start === end ) continue;
+
+				// write the merged range
+
+				const dataOffset = start * byteOffsetFactor;
+				const size = ( end - start ) * byteOffsetFactor;
 
 				const bufferOffset = dataOffset * ( isTyped ? array.BYTES_PER_ELEMENT : 1 ); // bufferOffset is always in bytes
 
@@ -222,6 +244,10 @@ class WebGPUBindingUtils {
 					dataOffset,
 					size
 				);
+
+				// start next if possible
+
+				if ( next !== undefined ) start = next.start;
 
 			}
 
@@ -244,21 +270,25 @@ class WebGPUBindingUtils {
 		const usage = GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST;
 		const index = data[ 0 ];
 
-		const buffer = device.createBuffer( {
-			label: 'bindingCameraIndex_' + index,
-			size: 16, // uint(4) * 4
-			usage: usage
-		} );
+		_bufferDescriptor.label = 'bindingCameraIndex_' + index;
+		_bufferDescriptor.size = 16; // uint(4) * 4
+		_bufferDescriptor.usage = usage;
+
+		const buffer = device.createBuffer( _bufferDescriptor );
+
+		_bufferDescriptor.reset();
 
 		device.queue.writeBuffer( buffer, 0, data, 0 );
 
-		const entries = [ { binding: 0, resource: { buffer } } ];
+		_bindGroupDescriptor.label = 'bindGroupCameraIndex_' + index;
+		_bindGroupDescriptor.layout = layoutGPU;
+		_bindGroupDescriptor.entries.push( { binding: 0, resource: { buffer } } );
 
-		return device.createBindGroup( {
-			label: 'bindGroupCameraIndex_' + index,
-			layout: layoutGPU,
-			entries
-		} );
+		const bindGroup = device.createBindGroup( _bindGroupDescriptor );
+
+		_bindGroupDescriptor.reset();
+
+		return bindGroup;
 
 	}
 
@@ -275,7 +305,9 @@ class WebGPUBindingUtils {
 		const device = backend.device;
 
 		let bindingPoint = 0;
-		const entriesGPU = [];
+
+		_bindGroupDescriptor.label = 'bindGroup_' + bindGroup.name;
+		_bindGroupDescriptor.layout = layoutGPU;
 
 		for ( const binding of bindGroup.bindings ) {
 
@@ -283,13 +315,13 @@ class WebGPUBindingUtils {
 
 				const bindingData = backend.get( binding );
 
-				entriesGPU.push( { binding: bindingPoint, resource: { buffer: bindingData.buffer } } );
+				_bindGroupDescriptor.entries.push( { binding: bindingPoint, resource: { buffer: bindingData.buffer } } );
 
 			} else if ( binding.isStorageBuffer ) {
 
 				const buffer = backend.get( binding.attribute ).buffer;
 
-				entriesGPU.push( { binding: bindingPoint, resource: { buffer: buffer } } );
+				_bindGroupDescriptor.entries.push( { binding: bindingPoint, resource: { buffer: buffer } } );
 
 			} else if ( binding.isSampledTexture ) {
 
@@ -327,13 +359,15 @@ class WebGPUBindingUtils {
 
 							dimensionViewGPU = GPUTextureViewDimension.Cube;
 
+						} else if ( binding.texture.isArrayTexture || binding.texture.isDataArrayTexture || binding.texture.isCompressedArrayTexture ) {
+
+							// Prefer the texture's actual array flag over the cached 3D binding type.
+							// Layered render targets can become array textures after shader compilation.
+							dimensionViewGPU = GPUTextureViewDimension.TwoDArray;
+
 						} else if ( binding.isSampledTexture3D ) {
 
 							dimensionViewGPU = GPUTextureViewDimension.ThreeD;
-
-						} else if ( binding.texture.isArrayTexture || binding.texture.isDataArrayTexture || binding.texture.isCompressedArrayTexture ) {
-
-							dimensionViewGPU = GPUTextureViewDimension.TwoDArray;
 
 						} else {
 
@@ -341,19 +375,26 @@ class WebGPUBindingUtils {
 
 						}
 
-						resourceGPU = textureData[ propertyName ] = textureData.texture.createView( { aspect: aspectGPU, dimension: dimensionViewGPU, mipLevelCount, baseMipLevel } );
+						_viewDescriptor.aspect = aspectGPU;
+						_viewDescriptor.dimension = dimensionViewGPU;
+						_viewDescriptor.mipLevelCount = mipLevelCount;
+						_viewDescriptor.baseMipLevel = baseMipLevel;
+
+						resourceGPU = textureData[ propertyName ] = textureData.texture.createView( _viewDescriptor );
+
+						_viewDescriptor.reset();
 
 					}
 
 				}
 
-				entriesGPU.push( { binding: bindingPoint, resource: resourceGPU } );
+				_bindGroupDescriptor.entries.push( { binding: bindingPoint, resource: resourceGPU } );
 
 			} else if ( binding.isSampler ) {
 
-				const textureGPU = backend.get( binding.texture );
+				const bindingData = backend.get( binding );
 
-				entriesGPU.push( { binding: bindingPoint, resource: textureGPU.sampler } );
+				_bindGroupDescriptor.entries.push( { binding: bindingPoint, resource: bindingData.sampler } );
 
 			}
 
@@ -361,11 +402,11 @@ class WebGPUBindingUtils {
 
 		}
 
-		return device.createBindGroup( {
-			label: 'bindGroup_' + bindGroup.name,
-			layout: layoutGPU,
-			entries: entriesGPU
-		} );
+		const bindGroupGPU = device.createBindGroup( _bindGroupDescriptor );
+
+		_bindGroupDescriptor.reset();
+
+		return bindGroupGPU;
 
 	}
 
@@ -398,8 +439,6 @@ class WebGPUBindingUtils {
 
 					if ( binding.visibility & GPUShaderStage.COMPUTE ) {
 
-						// compute
-
 						if ( binding.access === NodeAccess.READ_WRITE || binding.access === NodeAccess.WRITE_ONLY ) {
 
 							buffer.type = GPUBufferBindingType.Storage;
@@ -409,6 +448,14 @@ class WebGPUBindingUtils {
 							buffer.type = GPUBufferBindingType.ReadOnlyStorage;
 
 						}
+
+					} else if ( binding.nodeUniform && binding.nodeUniform.isAtomic && ( binding.visibility & GPUShaderStage.FRAGMENT ) ) {
+
+						// Atomic buffers require a read_write storage binding. Per the WGSL
+						// spec this is only valid in the fragment stage (compute is handled
+						// above), so the vertex stage falls back to read-only storage.
+
+						buffer.type = GPUBufferBindingType.Storage;
 
 					} else {
 
@@ -483,7 +530,7 @@ class WebGPUBindingUtils {
 
 					}
 
-				} else if ( binding.texture.isDataTexture || binding.texture.isDataArrayTexture || binding.texture.isData3DTexture || binding.texture.isStorageTexture ) {
+				} else {
 
 					const type = binding.texture.type;
 
@@ -494,6 +541,10 @@ class WebGPUBindingUtils {
 					} else if ( type === UnsignedIntType ) {
 
 						texture.sampleType = GPUTextureSampleType.UInt;
+
+					} else if ( binding.texture.normalized === true && ( type === ShortType || type === UnsignedShortType ) ) {
+
+						texture.sampleType = GPUTextureSampleType.UnfilterableFloat;
 
 					} else if ( type === FloatType ) {
 
@@ -533,7 +584,7 @@ class WebGPUBindingUtils {
 
 				if ( binding.texture.isDepthTexture ) {
 
-					if ( binding.texture.compareFunction !== null && backend.hasCompatibility( Compatibility.TEXTURE_COMPARE ) ) {
+					if ( binding.texture.compareFunction !== null && binding.textureNode.isPlainGather() === false && backend.hasCompatibility( Compatibility.TEXTURE_COMPARE ) ) {
 
 						sampler.type = GPUSamplerBindingType.Comparison;
 

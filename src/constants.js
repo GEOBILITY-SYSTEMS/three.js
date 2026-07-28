@@ -1,4 +1,4 @@
-export const REVISION = '185dev';
+export const REVISION = '186dev';
 
 /**
  * Represents mouse buttons and interaction types in context of controls.
@@ -70,6 +70,7 @@ export const PCFShadowMap = 1;
  *
  * @type {number}
  * @constant
+ * @deprecated since r186. Use `PCFShadowMap` instead.
  */
 export const PCFSoftShadowMap = 2;
 
