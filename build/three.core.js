@@ -21335,6 +21335,31 @@ class Material extends EventDispatcher {
 		this.clipShadows = false;
 
 		/**
+		 * User-defined clipping volumes for local clipping. Each volume has:
+		 *
+		 * - `planes`: `Array<Plane>` describing a convex region.
+		 * - `mode`: `'include' | 'exclude'`.
+		 *
+		 * A fragment is inside a volume only if it is inside all planes.
+		 * Local visibility is:
+		 *
+		 * `localVisible = ( !hasIncludeVolumes || insideAnyInclude ) && !insideAnyExclude`
+		 *
+		 * Include/exclude volumes are unioned, and exclude wins on overlap.
+		 *
+		 * If this property is `undefined`, clipping behavior based on
+		 * {@link Material#clippingPlanes} and {@link Material#clipIntersection} is used.
+		 * If {@link Material#clippingPlanes} is also set, those planes are internally
+		 * represented as one synthetic volume (`include` when `clipIntersection` is `false`,
+		 * otherwise `exclude` with inverted planes) and combined with these volumes.
+		 * This requires {@link WebGLRenderer#localClippingEnabled} to be `true`.
+		 *
+		 * @type {?(Array<{planes:Array<Plane>,mode:('include'|'exclude')}>)}
+		 * @default undefined
+		 */
+		this.clippingVolumes = undefined;
+
+		/**
 		 * Defines which side of faces cast shadows. If `null`, the side casting shadows
 		 * is determined as follows:
 		 *
@@ -22174,6 +22199,10 @@ class Material extends EventDispatcher {
 		this.clippingPlanes = dstPlanes;
 		this.clipIntersection = source.clipIntersection;
 		this.clipShadows = source.clipShadows;
+		this.clippingVolumes = Array.isArray( source.clippingVolumes ) ? source.clippingVolumes.map( ( clippingVolume ) => ( {
+			planes: clippingVolume.planes.map( ( clippingPlane ) => clippingPlane.clone() ),
+			mode: clippingVolume.mode
+		} ) ) : undefined;
 
 		this.shadowSide = source.shadowSide;
 
@@ -25914,6 +25943,10 @@ class Frustum {
 	/**
 	 * Returns `true` if the given bounding sphere is intersecting this frustum.
 	 *
+	 * This is a fast, conservative test that favors performance over precision. It can
+	 * report false positives for spheres that lie outside the frustum but are not separated
+	 * by a single frustum plane. It never reports false negatives, so it is safe for culling.
+	 *
 	 * @param {Sphere} sphere - The bounding sphere to test.
 	 * @return {boolean} Whether the bounding sphere is intersecting this frustum or not.
 	 */
@@ -25941,6 +25974,11 @@ class Frustum {
 
 	/**
 	 * Returns `true` if the given bounding box is intersecting this frustum.
+	 *
+	 * This is a fast, conservative test that favors performance over precision. It can
+	 * report false positives for large boxes that lie outside the frustum but are not
+	 * separated by a single frustum plane. It never reports false negatives, so it is
+	 * safe for culling.
 	 *
 	 * @param {Box3} box - The bounding box to test.
 	 * @return {boolean} Whether the bounding box is intersecting this frustum or not.
@@ -27422,6 +27460,7 @@ class BatchedMesh extends Mesh {
 		this.validateGeometryId( geometryId );
 
 		this._instanceInfo[ instanceId ].geometryIndex = geometryId;
+		this._visibilityChanged = true;
 
 		return this;
 
@@ -55867,15 +55906,19 @@ class RenderTarget3D extends RenderTarget {
 
 		this.depth = depth;
 
-		/**
-		 * Overwritten with a different texture type.
-		 *
-		 * @type {Data3DTexture}
-		 */
-		this.texture = new Data3DTexture( null, width, height, depth );
-		this._setTextureOptions( options );
+		// overwrite attachments with 3D textures
 
-		this.texture.isRenderTargetTexture = true;
+		for ( let i = 0; i < this.textures.length; i ++ ) {
+
+			const texture = new Data3DTexture( null, width, height, depth );
+			texture.isRenderTargetTexture = true;
+			texture.renderTarget = this;
+
+			this.textures[ i ] = texture;
+
+		}
+
+		this._setTextureOptions( options );
 
 	}
 

@@ -3,7 +3,7 @@
  * Copyright 2010-2026 Three.js Authors
  * SPDX-License-Identifier: MIT
  */
-import { Color, Vector2, Vector3, Vector4, Matrix2, Matrix3, Matrix4, UnsignedIntType, IntType, error, RedFormat, RedIntegerFormat, DepthFormat, DepthStencilFormat, AlphaFormat, RGFormat, RGIntegerFormat, RGBFormat, RGBIntegerFormat, EventDispatcher, MathUtils, warn, WebGLCoordinateSystem, WebGPUCoordinateSystem, ColorManagement, SRGBTransfer, NoToneMapping, StaticDrawUsage, InterleavedBufferAttribute, InterleavedBuffer, DynamicDrawUsage, NoColorSpace, log as log$1, warnOnce, Texture, Compatibility, LessCompare, LessEqualCompare, GreaterCompare, GreaterEqualCompare, NearestFilter, Sphere, BackSide, DoubleSide, CubeTexture, CubeReflectionMapping, CubeRefractionMapping, TangentSpaceNormalMap, NoNormalPacking, NormalRGPacking, NormalGAPacking, ObjectSpaceNormalMap, RED_GREEN_RGTC2_Format, RG11_EAC_Format, InstancedBufferAttribute, InstancedInterleavedBuffer, DataArrayTexture, FloatType, FramebufferTexture, LinearMipmapLinearFilter, DepthTexture, Material, LineBasicMaterial, LineDashedMaterial, NoBlending, MeshNormalMaterial, SRGBColorSpace, RenderTarget, BoxGeometry, Mesh, Scene, LinearFilter, CubeCamera, EquirectangularReflectionMapping, EquirectangularRefractionMapping, AddOperation, MixOperation, MultiplyOperation, MeshBasicMaterial, MeshLambertMaterial, MeshPhongMaterial, DataTexture, HalfFloatType, ClampToEdgeWrapping, BufferGeometry, OrthographicCamera, PerspectiveCamera, LinearSRGBColorSpace, RGBAFormat, CubeUVReflectionMapping, BufferAttribute, MeshStandardMaterial, MeshPhysicalMaterial, MeshToonMaterial, MeshMatcapMaterial, SpriteMaterial, PointsMaterial, ShadowMaterial, Uint32BufferAttribute, Uint16BufferAttribute, ByteType, UnsignedByteType, ShortType, UnsignedShortType, UnsignedShort4444Type, UnsignedShort5551Type, UnsignedInt248Type, UnsignedInt5999Type, UnsignedInt101111Type, NormalBlending, SrcAlphaFactor, OneMinusSrcAlphaFactor, AddEquation, MaterialBlending, Object3D, LinearMipMapLinearFilter, Plane, Float32BufferAttribute, UVMapping, PCFShadowMap, VSMShadowMap, BasicShadowMap, CubeDepthTexture, SphereGeometry, LinearMipmapNearestFilter, NearestMipmapLinearFilter, Float16BufferAttribute, yieldToMain, REVISION, ArrayCamera, PlaneGeometry, FrontSide, CustomBlending, ZeroFactor, CylinderGeometry, Quaternion, WebXRController, RAD2DEG, PCFSoftShadowMap, FrustumArray, Frustum, RGBAIntegerFormat, TimestampQuery, createCanvasElement, ReverseSubtractEquation, SubtractEquation, OneMinusDstAlphaFactor, OneMinusDstColorFactor, OneMinusSrcColorFactor, DstAlphaFactor, DstColorFactor, SrcAlphaSaturateFactor, SrcColorFactor, OneFactor, CullFaceNone, CullFaceBack, CullFaceFront, MultiplyBlending, SubtractiveBlending, AdditiveBlending, NotEqualDepth, GreaterDepth, GreaterEqualDepth, EqualDepth, LessEqualDepth, LessDepth, AlwaysDepth, NeverDepth, ReversedDepthFuncs, RGB_S3TC_DXT1_Format, RGBA_S3TC_DXT1_Format, RGBA_S3TC_DXT3_Format, RGBA_S3TC_DXT5_Format, RGB_PVRTC_4BPPV1_Format, RGB_PVRTC_2BPPV1_Format, RGBA_PVRTC_4BPPV1_Format, RGBA_PVRTC_2BPPV1_Format, RGB_ETC1_Format, RGB_ETC2_Format, RGBA_ETC2_EAC_Format, R11_EAC_Format, SIGNED_R11_EAC_Format, SIGNED_RG11_EAC_Format, RGBA_ASTC_4x4_Format, RGBA_ASTC_5x4_Format, RGBA_ASTC_5x5_Format, RGBA_ASTC_6x5_Format, RGBA_ASTC_6x6_Format, RGBA_ASTC_8x5_Format, RGBA_ASTC_8x6_Format, RGBA_ASTC_8x8_Format, RGBA_ASTC_10x5_Format, RGBA_ASTC_10x6_Format, RGBA_ASTC_10x8_Format, RGBA_ASTC_10x10_Format, RGBA_ASTC_12x10_Format, RGBA_ASTC_12x12_Format, RGBA_BPTC_Format, RGB_BPTC_SIGNED_Format, RGB_BPTC_UNSIGNED_Format, RED_RGTC1_Format, SIGNED_RED_RGTC1_Format, SIGNED_RED_GREEN_RGTC2_Format, MirroredRepeatWrapping, RepeatWrapping, NearestMipmapNearestFilter, NotEqualCompare, EqualCompare, AlwaysCompare, NeverCompare, LinearTransfer, getByteLength, isTypedArray, NotEqualStencilFunc, GreaterStencilFunc, GreaterEqualStencilFunc, EqualStencilFunc, LessEqualStencilFunc, LessStencilFunc, AlwaysStencilFunc, NeverStencilFunc, DecrementWrapStencilOp, IncrementWrapStencilOp, DecrementStencilOp, IncrementStencilOp, InvertStencilOp, ReplaceStencilOp, ZeroStencilOp, KeepStencilOp, MaxEquation, MinEquation, SpotLight, PointLight, DirectionalLight, RectAreaLight, AmbientLight, HemisphereLight, LightProbe, LinearToneMapping, ReinhardToneMapping, CineonToneMapping, ACESFilmicToneMapping, AgXToneMapping, NeutralToneMapping, Group, Loader, FileLoader, MaterialLoader, ObjectLoader } from './three.core.js';
+import { Color, Vector2, Vector3, Vector4, Matrix2, Matrix3, Matrix4, UnsignedIntType, IntType, error, RedFormat, RedIntegerFormat, DepthFormat, DepthStencilFormat, AlphaFormat, RGFormat, RGIntegerFormat, RGBFormat, RGBIntegerFormat, EventDispatcher, MathUtils, warn, WebGLCoordinateSystem, WebGPUCoordinateSystem, ColorManagement, SRGBTransfer, NoToneMapping, StaticDrawUsage, InterleavedBufferAttribute, InterleavedBuffer, DynamicDrawUsage, NoColorSpace, log as log$1, warnOnce, Texture, Compatibility, LessCompare, LessEqualCompare, GreaterCompare, GreaterEqualCompare, NearestFilter, Sphere, BackSide, DoubleSide, CubeTexture, CubeReflectionMapping, CubeRefractionMapping, TangentSpaceNormalMap, NoNormalPacking, NormalRGPacking, NormalGAPacking, ObjectSpaceNormalMap, RED_GREEN_RGTC2_Format, RG11_EAC_Format, InstancedBufferAttribute, InstancedInterleavedBuffer, DataTexture, DataArrayTexture, FloatType, FramebufferTexture, LinearMipmapLinearFilter, DepthTexture, Material, LineBasicMaterial, LineDashedMaterial, NoBlending, MeshNormalMaterial, SRGBColorSpace, RenderTarget, BoxGeometry, Mesh, Scene, LinearFilter, CubeCamera, EquirectangularReflectionMapping, EquirectangularRefractionMapping, AddOperation, MixOperation, MultiplyOperation, MeshBasicMaterial, MeshLambertMaterial, MeshPhongMaterial, HalfFloatType, ClampToEdgeWrapping, BufferGeometry, OrthographicCamera, PerspectiveCamera, LinearSRGBColorSpace, RGBAFormat, CubeUVReflectionMapping, BufferAttribute, MeshStandardMaterial, MeshPhysicalMaterial, MeshToonMaterial, MeshMatcapMaterial, SpriteMaterial, PointsMaterial, ShadowMaterial, Uint32BufferAttribute, Uint16BufferAttribute, ByteType, UnsignedByteType, ShortType, UnsignedShortType, UnsignedShort4444Type, UnsignedShort5551Type, UnsignedInt248Type, UnsignedInt5999Type, UnsignedInt101111Type, NormalBlending, SrcAlphaFactor, OneMinusSrcAlphaFactor, AddEquation, MaterialBlending, Object3D, LinearMipMapLinearFilter, Plane, Float32BufferAttribute, UVMapping, PCFShadowMap, VSMShadowMap, BasicShadowMap, CubeDepthTexture, SphereGeometry, LinearMipmapNearestFilter, NearestMipmapLinearFilter, Float16BufferAttribute, yieldToMain, REVISION, ArrayCamera, PlaneGeometry, FrontSide, CustomBlending, ZeroFactor, CylinderGeometry, Quaternion, WebXRController, RAD2DEG, PCFSoftShadowMap, FrustumArray, Frustum, RGBAIntegerFormat, TimestampQuery, createCanvasElement, ReverseSubtractEquation, SubtractEquation, OneMinusDstAlphaFactor, OneMinusDstColorFactor, OneMinusSrcColorFactor, DstAlphaFactor, DstColorFactor, SrcAlphaSaturateFactor, SrcColorFactor, OneFactor, CullFaceNone, CullFaceBack, CullFaceFront, MultiplyBlending, SubtractiveBlending, AdditiveBlending, NotEqualDepth, GreaterDepth, GreaterEqualDepth, EqualDepth, LessEqualDepth, LessDepth, AlwaysDepth, NeverDepth, ReversedDepthFuncs, RGB_S3TC_DXT1_Format, RGBA_S3TC_DXT1_Format, RGBA_S3TC_DXT3_Format, RGBA_S3TC_DXT5_Format, RGB_PVRTC_4BPPV1_Format, RGB_PVRTC_2BPPV1_Format, RGBA_PVRTC_4BPPV1_Format, RGBA_PVRTC_2BPPV1_Format, RGB_ETC1_Format, RGB_ETC2_Format, RGBA_ETC2_EAC_Format, R11_EAC_Format, SIGNED_R11_EAC_Format, SIGNED_RG11_EAC_Format, RGBA_ASTC_4x4_Format, RGBA_ASTC_5x4_Format, RGBA_ASTC_5x5_Format, RGBA_ASTC_6x5_Format, RGBA_ASTC_6x6_Format, RGBA_ASTC_8x5_Format, RGBA_ASTC_8x6_Format, RGBA_ASTC_8x8_Format, RGBA_ASTC_10x5_Format, RGBA_ASTC_10x6_Format, RGBA_ASTC_10x8_Format, RGBA_ASTC_10x10_Format, RGBA_ASTC_12x10_Format, RGBA_ASTC_12x12_Format, RGBA_BPTC_Format, RGB_BPTC_SIGNED_Format, RGB_BPTC_UNSIGNED_Format, RED_RGTC1_Format, SIGNED_RED_RGTC1_Format, SIGNED_RED_GREEN_RGTC2_Format, MirroredRepeatWrapping, RepeatWrapping, NearestMipmapNearestFilter, NotEqualCompare, EqualCompare, AlwaysCompare, NeverCompare, LinearTransfer, getByteLength, isTypedArray, NotEqualStencilFunc, GreaterStencilFunc, GreaterEqualStencilFunc, EqualStencilFunc, LessEqualStencilFunc, LessStencilFunc, AlwaysStencilFunc, NeverStencilFunc, DecrementWrapStencilOp, IncrementWrapStencilOp, DecrementStencilOp, IncrementStencilOp, InvertStencilOp, ReplaceStencilOp, ZeroStencilOp, KeepStencilOp, MaxEquation, MinEquation, SpotLight, PointLight, DirectionalLight, RectAreaLight, AmbientLight, HemisphereLight, LightProbe, LinearToneMapping, ReinhardToneMapping, CineonToneMapping, ACESFilmicToneMapping, AgXToneMapping, NeutralToneMapping, Group, Loader, FileLoader, MaterialLoader, ObjectLoader } from './three.core.js';
 export { AdditiveAnimationBlendMode, AnimationAction, AnimationClip, AnimationLoader, AnimationMixer, AnimationObjectGroup, AnimationUtils, ArcCurve, ArrowHelper, AttachedBindMode, Audio, AudioAnalyser, AudioContext, AudioListener, AudioLoader, AxesHelper, BasicDepthPacking, BatchedMesh, BezierInterpolant, Bone, BooleanKeyframeTrack, Box2, Box3, Box3Helper, BoxHelper, BufferGeometryLoader, Cache, Camera, CameraHelper, CanvasTexture, CapsuleGeometry, CatmullRomCurve3, CircleGeometry, Clock, ColorKeyframeTrack, CompressedArrayTexture, CompressedCubeTexture, CompressedTexture, CompressedTextureLoader, ConeGeometry, ConstantAlphaFactor, ConstantColorFactor, Controls, CubeTextureLoader, CubicBezierCurve, CubicBezierCurve3, CubicInterpolant, CullFaceFrontBack, Curve, CurvePath, CustomToneMapping, Cylindrical, Data3DTexture, DataTextureLoader, DataUtils, DefaultLoadingManager, DetachedBindMode, DirectionalLightHelper, DiscreteInterpolant, DodecahedronGeometry, DynamicCopyUsage, DynamicReadUsage, EdgesGeometry, EllipseCurve, Euler, ExternalTexture, ExtrudeGeometry, Fog, FogExp2, GLBufferAttribute, GLSL1, GLSL3, GridHelper, HTMLTexture, HemisphereLightHelper, IcosahedronGeometry, ImageBitmapLoader, ImageLoader, ImageUtils, InstancedBufferGeometry, InstancedMesh, Int16BufferAttribute, Int32BufferAttribute, Int8BufferAttribute, Interpolant, InterpolateBezier, InterpolateDiscrete, InterpolateLinear, InterpolateSmooth, InterpolationSamplingMode, InterpolationSamplingType, KeyframeTrack, LOD, LatheGeometry, Layers, Light, Line, Line3, LineCurve, LineCurve3, LineLoop, LineSegments, LinearInterpolant, LinearMipMapNearestFilter, LoaderUtils, LoadingManager, LoopOnce, LoopPingPong, LoopRepeat, MOUSE, MeshDepthMaterial, MeshDistanceMaterial, NearestMipMapLinearFilter, NearestMipMapNearestFilter, NormalAnimationBlendMode, NumberKeyframeTrack, OctahedronGeometry, OneMinusConstantAlphaFactor, OneMinusConstantColorFactor, Path, PlaneHelper, PointLightHelper, Points, PolarGridHelper, PolyhedronGeometry, PositionalAudio, PropertyBinding, PropertyMixer, QuadraticBezierCurve, QuadraticBezierCurve3, QuaternionKeyframeTrack, QuaternionLinearInterpolant, RGBADepthPacking, RGBDepthPacking, RGDepthPacking, RawShaderMaterial, Ray, Raycaster, RenderTarget3D, RingGeometry, ShaderMaterial, Shape, ShapeGeometry, ShapePath, ShapeUtils, Skeleton, SkeletonHelper, SkinnedMesh, Source, Spherical, SphericalHarmonics3, SplineCurve, SpotLightHelper, Sprite, StaticCopyUsage, StaticReadUsage, StereoCamera, StreamCopyUsage, StreamDrawUsage, StreamReadUsage, StringKeyframeTrack, TOUCH, TetrahedronGeometry, TextureLoader, TextureUtils, Timer, TorusGeometry, TorusKnotGeometry, Triangle, TriangleFanDrawMode, TriangleStripDrawMode, TrianglesDrawMode, TubeGeometry, Uint8BufferAttribute, Uint8ClampedBufferAttribute, Uniform, UniformsGroup, VectorKeyframeTrack, VideoFrameTexture, VideoTexture, WebGL3DRenderTarget, WebGLArrayRenderTarget, WebGLRenderTarget, WireframeGeometry, WrapAroundEnding, ZeroCurvatureEnding, ZeroSlopeEnding, getConsoleFunction, setConsoleFunction } from './three.core.js';
 
 const refreshUniforms = [
@@ -1372,6 +1372,12 @@ function base64ToArrayBuffer( base64 ) {
 
 }
 
+function isArrayAsParameter( params ) {
+
+	return ( params[ 0 ] !== undefined && params[ 0 ] !== null ) && ( params[ 0 ].isNode || Object.getPrototypeOf( params[ 0 ] ) !== Object.prototype );
+
+}
+
 var NodeUtils = /*#__PURE__*/Object.freeze({
 	__proto__: null,
 	arrayBufferToBase64: arrayBufferToBase64,
@@ -1387,7 +1393,8 @@ var NodeUtils = /*#__PURE__*/Object.freeze({
 	getValueType: getValueType,
 	hash: hash$1,
 	hashArray: hashArray,
-	hashString: hashString
+	hashString: hashString,
+	isArrayAsParameter: isArrayAsParameter
 });
 
 /**
@@ -4429,12 +4436,6 @@ class ShaderCallNodeInternal extends Node {
 		return result;
 
 	}
-
-}
-
-function isArrayAsParameter( params ) {
-
-	return params[ 0 ] && ( params[ 0 ].isNode || Object.getPrototypeOf( params[ 0 ] ) !== Object.prototype );
 
 }
 
@@ -13247,6 +13248,18 @@ class TextureNode extends UniformNode {
 	}
 
 	/**
+	 * Returns `true` if the texture is sampled with a plain gather (`textureGather`),
+	 * meaning a gather without a compare value.
+	 *
+	 * @return {boolean} Whether a plain gather is used or not.
+	 */
+	isPlainGather() {
+
+		return this.gatherNode !== null && this.compareNode === null;
+
+	}
+
+	/**
 	 * Samples the texture by defining a depth node.
 	 *
 	 * @param {Node<int>} depthNode - The depth node.
@@ -17740,6 +17753,10 @@ class EventNode extends Node {
 
 			this.updateType = NodeUpdateType.FRAME;
 
+		} else if ( eventType === EventNode.AFTER_OBJECT ) {
+
+			this.updateAfterType = NodeUpdateType.OBJECT;
+
 		} else if ( eventType === EventNode.BEFORE_OBJECT ) {
 
 			this.updateBeforeType = NodeUpdateType.OBJECT;
@@ -17798,11 +17815,18 @@ class EventNode extends Node {
 
 	}
 
+	updateAfter( frame ) {
+
+		this.callback( frame );
+
+	}
+
 }
 
 EventNode.OBJECT = 'object';
 EventNode.MATERIAL = 'material';
 EventNode.FRAME = 'frame';
+EventNode.AFTER_OBJECT = 'afterObject';
 EventNode.BEFORE_OBJECT = 'beforeObject';
 EventNode.BEFORE_MATERIAL = 'beforeMaterial';
 EventNode.BEFORE_FRAME = 'beforeFrame';
@@ -17847,6 +17871,16 @@ const OnMaterialUpdate = ( callback ) => createEvent( EventNode.MATERIAL, callba
  * @returns {EventNode}
  */
 const OnFrameUpdate = ( callback ) => createEvent( EventNode.FRAME, callback );
+
+/**
+ * Creates an event that triggers a function every time an object (Mesh|Sprite) has been rendered.
+ *
+ * The event will be bound to the declared TSL function `Fn()`; it must be declared within a `Fn()` or the JS function call must be inherited from one.
+ *
+ * @param {Function} callback - The callback function.
+ * @returns {EventNode}
+ */
+const OnAfterObjectUpdate = ( callback ) => createEvent( EventNode.AFTER_OBJECT, callback );
 
 /**
  * Creates an event that triggers a function before an object (Mesh|Sprite) is updated.
@@ -18633,11 +18667,18 @@ const instance = /*@__PURE__*/ Fn( ( [ matrices, colors = null ], builder ) => {
 
 		const instancedMesh = builder.object;
 
-		OnObjectUpdate( ( { object } ) => {
+		OnAfterObjectUpdate( ( { object } ) => {
 
-			const previousInstanceData = _previousInstanceMatrices.get( object );
+			const { previousInstanceMatrix } = _previousInstanceMatrices.get( object );
 
-			previousInstanceData.previousInstanceMatrix.array.set( matrices.array );
+			previousInstanceMatrix.array.set( matrices.array );
+			previousInstanceMatrix.version = matrices.version;
+
+			// handle interleaved path
+
+			const previousInterleavedMatrix = _matrixBuffers.get( previousInstanceMatrix );
+
+			if ( previousInterleavedMatrix !== undefined ) previousInterleavedMatrix.version = matrices.version;
 
 		} );
 
@@ -18680,6 +18721,8 @@ const instancedMesh = /*@__PURE__*/ Fn( ( [ instancedMesh ] ) => {
 
 }, 'void' );
 
+const _previousBatchingMatrices = /*@__PURE__*/ new WeakMap();
+
 /**
  * TSL function that retrieves the batching color for a given instance ID from a colors texture.
  *
@@ -18714,11 +18757,73 @@ const getIndirectIndex = /*@__PURE__*/ Fn( ( [ indirectTexture, id ] ) => {
 } );
 
 /**
+ * Creates the node that reads a batching matrix from the given matrices texture.
+ *
+ * @param {Texture} matricesTexture - The matrices texture.
+ * @param {Node<uint>} id - The indirect instance ID.
+ * @returns {Node<mat4>} The matrix node.
+ */
+function createBatchingMatrixNode( matricesTexture, id ) {
+
+	const size = int( textureSize( textureLoad( matricesTexture ), 0 ).x ).toConst();
+	const j = float( id ).mul( 4 ).toInt().toConst();
+
+	const x = j.mod( size ).toConst();
+	const y = j.div( size ).toConst();
+
+	return mat4(
+		textureLoad( matricesTexture, ivec2( x, y ) ),
+		textureLoad( matricesTexture, ivec2( x.add( 1 ), y ) ),
+		textureLoad( matricesTexture, ivec2( x.add( 2 ), y ) ),
+		textureLoad( matricesTexture, ivec2( x.add( 3 ), y ) )
+	);
+
+}
+
+/**
+ * Retrieves or initializes the previous frame batching matrix node for motion vectors.
+ * Uses a WeakMap to cache previous frame matrices textures and their TSL nodes.
+ *
+ * @param {BatchedMesh} batchMesh - The batched mesh.
+ * @param {Node<uint>} id - The indirect instance ID.
+ * @returns {Node<mat4>} The previous frame batching matrix node.
+ */
+function getPreviousNode( batchMesh, id ) {
+
+	let data = _previousBatchingMatrices.get( batchMesh );
+
+	if ( data === undefined ) {
+
+		const { image, format, type } = batchMesh._matricesTexture;
+
+		const previousMatricesTexture = new DataTexture( image.data.slice(), image.width, image.height, format, type );
+
+		data = {
+			previousMatricesTexture,
+			node: createBatchingMatrixNode( previousMatricesTexture, id )
+		};
+
+		_previousBatchingMatrices.set( batchMesh, data );
+
+	}
+
+	return data.node;
+
+}
+
+/**
  * TSL object representing a varying property for the batching color vector.
  *
  * @type {VaryingNode<vec4>}
  */
 const batchColor = /*@__PURE__*/ varyingProperty( 'vec4', 'vBatchColor' );
+
+/**
+ * TSL object representing a varying property for the batch indirect index (instance ID).
+ *
+ * @type {VaryingNode<uint>}
+ */
+const batchIndirectIndex = /*@__PURE__*/ varyingProperty( 'uint', 'vBatchIndirectId' );
 
 /**
  * TSL function representing the vertex shader batching setup.
@@ -18735,19 +18840,9 @@ const batch = /*@__PURE__*/ Fn( ( [ batchMesh ], builder ) => {
 
 	const indirectId = getIndirectIndex( batchMesh._indirectTexture, int( batchingIdNode ) );
 
-	const matricesTexture = batchMesh._matricesTexture;
+	batchIndirectIndex.assign( indirectId );
 
-	const size = int( textureSize( textureLoad( matricesTexture ), 0 ).x ).toConst();
-	const j = float( indirectId ).mul( 4 ).toInt().toConst();
-
-	const x = j.mod( size ).toConst();
-	const y = j.div( size ).toConst();
-	const batchingMatrix = mat4(
-		textureLoad( matricesTexture, ivec2( x, y ) ),
-		textureLoad( matricesTexture, ivec2( x.add( 1 ), y ) ),
-		textureLoad( matricesTexture, ivec2( x.add( 2 ), y ) ),
-		textureLoad( matricesTexture, ivec2( x.add( 3 ), y ) )
-	);
+	const batchingMatrix = createBatchingMatrixNode( batchMesh._matricesTexture, indirectId );
 
 	const colorsTexture = batchMesh._colorsTexture;
 
@@ -18762,6 +18857,22 @@ const batch = /*@__PURE__*/ Fn( ( [ batchMesh ], builder ) => {
 	const bm = mat3( batchingMatrix );
 
 	positionLocal.assign( batchingMatrix.mul( positionLocal ) );
+
+	if ( builder.needsPreviousData() ) {
+
+		OnAfterObjectUpdate( ( { object } ) => {
+
+			const previousBatchData = _previousBatchingMatrices.get( object );
+
+			previousBatchData.previousMatricesTexture.image.data.set( object._matricesTexture.image.data );
+			previousBatchData.previousMatricesTexture.needsUpdate = true;
+
+		} );
+
+		const previousBatchingMatrixNode = getPreviousNode( batchMesh, indirectId );
+		positionPrevious.assign( previousBatchingMatrixNode.mul( positionPrevious ).xyz );
+
+	}
 
 	const transformedNormal = normalLocal.div( vec3( bm[ 0 ].dot( bm[ 0 ] ), bm[ 1 ].dot( bm[ 1 ] ), bm[ 2 ].dot( bm[ 2 ] ) ) );
 
@@ -32319,9 +32430,10 @@ class Pipelines extends DataMap {
 	 *
 	 * @param {Node} computeNode - The compute node.
 	 * @param {Array<BindGroup>} bindings - The bindings.
+	 * @param {?Array<Promise>} [promises=null] - An array of compilation promises which is only relevant in context of `Renderer.compileComputeAsync()`.
 	 * @return {ComputePipeline} The compute pipeline.
 	 */
-	getForCompute( computeNode, bindings ) {
+	getForCompute( computeNode, bindings, promises = null ) {
 
 		const { backend } = this;
 
@@ -32368,7 +32480,7 @@ class Pipelines extends DataMap {
 
 				if ( previousPipeline && previousPipeline.usedTimes === 0 ) this._releasePipeline( previousPipeline );
 
-				pipeline = this._getComputePipeline( computeNode, stageCompute, cacheKey, bindings );
+				pipeline = this._getComputePipeline( computeNode, stageCompute, cacheKey, bindings, promises );
 
 			}
 
@@ -32580,9 +32692,10 @@ class Pipelines extends DataMap {
 	 * @param {ProgrammableStage} stageCompute - The programmable stage representing the compute shader.
 	 * @param {string} cacheKey - The cache key.
 	 * @param {Array<BindGroup>} bindings - The bindings.
+	 * @param {?Array<Promise>} promises - An array of compilation promises which is only relevant in context of `Renderer.compileComputeAsync()`.
 	 * @return {ComputePipeline} The compute pipeline.
 	 */
-	_getComputePipeline( computeNode, stageCompute, cacheKey, bindings ) {
+	_getComputePipeline( computeNode, stageCompute, cacheKey, bindings, promises ) {
 
 		// check for existing pipeline
 
@@ -32596,7 +32709,7 @@ class Pipelines extends DataMap {
 
 			this.caches.set( cacheKey, pipeline );
 
-			this.backend.createComputePipeline( pipeline, bindings );
+			this.backend.createComputePipeline( pipeline, bindings, promises );
 
 		}
 
@@ -35816,7 +35929,7 @@ const struct = ( membersLayout, name = null ) => {
 
 		if ( params.length > 0 ) {
 
-			if ( params[ 0 ].isNode ) {
+			if ( isArrayAsParameter( params ) ) {
 
 				values = {};
 
@@ -35824,7 +35937,7 @@ const struct = ( membersLayout, name = null ) => {
 
 				for ( let i = 0; i < params.length; i ++ ) {
 
-					values[ names[ i ] ] = params[ i ];
+					values[ names[ i ] ] = nodeObject( params[ i ] );
 
 				}
 
@@ -48717,6 +48830,7 @@ var TSL = /*#__PURE__*/Object.freeze({
 	NodeShaderStage: NodeShaderStage,
 	NodeType: NodeType,
 	NodeUpdateType: NodeUpdateType,
+	OnAfterObjectUpdate: OnAfterObjectUpdate,
 	OnAfterRenderPipeline: OnAfterRenderPipeline,
 	OnBeforeFrameUpdate: OnBeforeFrameUpdate,
 	OnBeforeMaterialUpdate: OnBeforeMaterialUpdate,
@@ -48781,6 +48895,7 @@ var TSL = /*#__PURE__*/Object.freeze({
 	backgroundRotation: backgroundRotation,
 	batch: batch,
 	batchColor: batchColor,
+	batchIndirectIndex: batchIndirectIndex,
 	bentNormalView: bentNormalView,
 	billboarding: billboarding,
 	bitAnd: bitAnd,
@@ -56102,9 +56217,10 @@ class NodeManager extends DataMap {
 	 * Returns a node builder state for the given compute node.
 	 *
 	 * @param {Node} computeNode - The compute node.
-	 * @return {NodeBuilderState} The node builder state.
+	 * @param {boolean} [useAsync=false] - Whether to use async build with yielding.
+	 * @return {NodeBuilderState|Promise<NodeBuilderState>} The node builder state (or Promise if async).
 	 */
-	getForCompute( computeNode ) {
+	getForCompute( computeNode, useAsync = false ) {
 
 		const computeData = this.get( computeNode );
 
@@ -56117,6 +56233,21 @@ class NodeManager extends DataMap {
 
 			if ( onNodeBuilderCreated !== null ) onNodeBuilderCreated( nodeBuilder, computeNode );
 
+			if ( useAsync ) {
+
+				return nodeBuilder.buildAsync().then( () => {
+
+					nodeBuilderState = this._createNodeBuilderState( nodeBuilder );
+
+					computeData.nodeBuilderState = nodeBuilderState;
+					computeData.version = computeNode.version;
+
+					return nodeBuilderState;
+
+				} );
+
+			}
+
 			nodeBuilder.build();
 
 			nodeBuilderState = this._createNodeBuilderState( nodeBuilder );
@@ -56127,6 +56258,27 @@ class NodeManager extends DataMap {
 		}
 
 		return nodeBuilderState;
+
+	}
+
+	/**
+	 * Async version of getForCompute() that yields to main thread during build.
+	 * Use this in compileComputeAsync() to prevent blocking the main thread.
+	 *
+	 * @param {Node} computeNode - The compute node.
+	 * @return {Promise<NodeBuilderState>} A promise that resolves to the node builder state.
+	 */
+	getForComputeAsync( computeNode ) {
+
+		const result = this.getForCompute( computeNode, true );
+
+		if ( result.then ) {
+
+			return result;
+
+		}
+
+		return Promise.resolve( result );
 
 	}
 
@@ -56391,6 +56543,27 @@ class NodeManager extends DataMap {
 		let node = nodeCache.get( object );
 
 		if ( node === undefined || forceUpdate ) {
+
+			if ( node === undefined && object.isTexture === true ) {
+
+				const onTextureDispose = () => {
+
+					object.removeEventListener( 'dispose', onTextureDispose );
+
+					const node = nodeCache.get( object );
+
+					if ( node !== undefined ) {
+
+						nodeCache.delete( object );
+						node.dispose();
+
+					}
+
+				};
+
+				object.addEventListener( 'dispose', onTextureDispose );
+
+			}
 
 			node = callback();
 			nodeCache.set( object, node );
@@ -58065,11 +58238,11 @@ class XRManager extends EventDispatcher {
 	 * Browser-side `XRWebGLBinding.foveateBoundTexture()` failures are treated as
 	 * non-fatal so they do not interrupt rendering.
 	 *
-	 * @param {RenderTarget} renderTarget - The internal render target.
+	 * @param {?RenderTarget} renderTarget - The internal render target.
 	 */
 	foveateBoundTexture( renderTarget ) {
 
-		if ( renderTarget.isPostProcessingRenderTarget !== true ) return;
+		if ( renderTarget === null || renderTarget.isPostProcessingRenderTarget !== true ) return;
 		if ( this.isPresenting !== true ) return;
 		if ( this._glProjLayer === null ) return;
 
@@ -60620,9 +60793,10 @@ class Renderer {
 	 * @param {Object3D} scene - The scene or 3D object to precompile.
 	 * @param {Camera} camera - The camera that is used to render the scene.
 	 * @param {?Scene} targetScene - If the first argument is a 3D object, this parameter must represent the scene the 3D object is going to be added.
+	 * @param {onProgressCallback} [onProgress] - Executed while the compilation is in progress.
 	 * @return {Promise} A Promise that resolves when the compile has been finished.
 	 */
-	async compileAsync( scene, camera, targetScene = null ) {
+	async compileAsync( scene, camera, targetScene = null, onProgress = null ) {
 
 		if ( this._isDeviceLost === true ) return;
 
@@ -60656,7 +60830,9 @@ class Renderer {
 
 		// Match render()'s logic: use frameBufferTarget when needsFrameBufferTarget is true
 		const useFrameBufferTarget = this.needsFrameBufferTarget && this._renderTarget === null;
-		const renderTarget = useFrameBufferTarget ? this._getFrameBufferTarget() : ( this._renderTarget || this._outputRenderTarget );
+		const outputRenderTarget = this._renderTarget || this._outputRenderTarget;
+		const useXRCamera = this.xr.isPresenting === true && this.isOutputTarget;
+		const renderTarget = useFrameBufferTarget ? this._getFrameBufferTarget() : outputRenderTarget;
 		const renderContext = this._renderContexts.get( renderTarget, this._mrt );
 		const activeMipmapLevel = this._activeMipmapLevel;
 
@@ -60687,7 +60863,7 @@ class Renderer {
 
 		if ( scene.matrixWorldAutoUpdate === true ) scene.updateMatrixWorld();
 
-		camera = this._updateCamera( camera );
+		camera = this._updateCamera( camera, useXRCamera );
 
 		//
 
@@ -60782,6 +60958,9 @@ class Renderer {
 		// Process compilation work items sequentially to avoid freezing
 		// Yields between objects to keep animation smooth
 
+		const total = compilationPromises.length;
+		let loaded = 0;
+
 		for ( const item of compilationPromises ) {
 
 			const renderObject = this._objects.get( item.object, item.material, item.scene, item.camera, item.lightsNode, item.renderContext, item.clippingContext, item.passId );
@@ -60811,8 +60990,100 @@ class Renderer {
 			this._nodes.updateAfter( renderObject );
 			this._isPreCompiling = false;
 
+			loaded ++;
+
+			if ( onProgress !== null ) {
+
+				onProgress( new ProgressEvent( 'progress', { lengthComputable: true, loaded, total } ) );
+
+			}
+
 			// Yield between objects to allow animation frames
 			await yieldToMain();
+
+		}
+
+	}
+
+	/**
+	 * Compile compute programs. This can be useful to avoid a
+	 * phenomenon which is called "shader compilation stutter", which occurs when
+	 * rendering an object with a new shader for the first time.
+	 *
+	 * @async
+	 * @param {Node|Array<Node>} computeNodes - The compute node(s).
+	 * @param {onProgressCallback} [onProgress] - Executed while the compilation is in progress.
+	 * @return {Promise} A Promise that resolves when the compile has been finished.
+	 */
+	async compileComputeAsync( computeNodes, onProgress = null ) {
+
+		if ( this._isDeviceLost === true ) return;
+
+		if ( this._initialized === false ) await this.init();
+
+		const computeList = Array.isArray( computeNodes ) ? computeNodes : [ computeNodes ];
+
+		if ( computeList.length === 0 || computeList.some( ( computeNode ) => computeNode === undefined || computeNode === null || computeNode.isComputeNode !== true ) ) {
+
+			throw new Error( 'THREE.Renderer: .compileComputeAsync() expects a ComputeNode.' );
+
+		}
+
+		const total = computeList.length;
+		let loaded = 0;
+
+		//
+
+		const pipelines = this._pipelines;
+		const bindings = this._bindings;
+		const nodes = this._nodes;
+
+		for ( const computeNode of computeList ) {
+
+			if ( pipelines.has( computeNode ) === false ) {
+
+				const dispose = () => {
+
+					computeNode.removeEventListener( 'dispose', dispose );
+
+					pipelines.delete( computeNode );
+					bindings.deleteForCompute( computeNode );
+					nodes.delete( computeNode );
+
+				};
+
+				computeNode.addEventListener( 'dispose', dispose );
+
+				const onInitFn = computeNode.onInitFunction;
+
+				if ( onInitFn !== null ) {
+
+					onInitFn.call( computeNode, { renderer: this } );
+
+				}
+
+			}
+
+			await nodes.getForComputeAsync( computeNode );
+
+			nodes.updateForCompute( computeNode );
+			bindings.updateForCompute( computeNode );
+
+			const computeBindings = bindings.getForCompute( computeNode );
+			const compilationPromises = [];
+
+			pipelines.getForCompute( computeNode, computeBindings, compilationPromises );
+			await Promise.all( compilationPromises );
+
+			loaded ++;
+
+			if ( onProgress !== null ) {
+
+				onProgress( new ProgressEvent( 'progress', { lengthComputable: true, loaded, total } ) );
+
+			}
+
+			if ( loaded < total ) await yieldToMain();
 
 		}
 
@@ -61306,6 +61577,7 @@ class Renderer {
 		const sceneRef = ( scene.isScene === true ) ? scene : _scene;
 
 		const outputRenderTarget = this._renderTarget || this._outputRenderTarget;
+		const useXRCamera = this.xr.isPresenting === true && this.isOutputTarget;
 
 		const activeCubeFace = this._activeCubeFace;
 		const activeMipmapLevel = this._activeMipmapLevel;
@@ -61374,7 +61646,7 @@ class Renderer {
 
 		if ( scene.matrixWorldAutoUpdate === true ) scene.updateMatrixWorld();
 
-		camera = this._updateCamera( camera );
+		camera = this._updateCamera( camera, useXRCamera );
 
 		//
 
@@ -62839,7 +63111,7 @@ class Renderer {
 	 * @param {number} width - The width of the copy region.
 	 * @param {number} height - The height of the copy region.
 	 * @param {number} [textureIndex=0] - The texture index of a MRT render target.
-	 * @param {number} [faceIndex=0] - The active cube face index.
+	 * @param {number} [faceIndex=0] - The cube face, depth slice or array layer index.
 	 * @return {Promise<TypedArray>} A Promise that resolves when the read has been finished. The resolve provides the read data as a typed array.
 	 */
 	async readRenderTargetPixelsAsync( renderTarget, x, y, width, height, textureIndex = 0, faceIndex = 0 ) {
@@ -63221,13 +63493,14 @@ class Renderer {
 	 *
 	 * @private
 	 * @param {Camera} camera - The camera to update.
+	 * @param {boolean} useXRCamera - Whether the XR camera should be used when presenting.
 	 * @return {Camera} The returned camera might be different depending on whether XR is used or not.
 	 */
-	_updateCamera( camera ) {
+	_updateCamera( camera, useXRCamera ) {
 
 		const xr = this.xr;
 
-		if ( xr.isPresenting === false ) {
+		if ( xr.isPresenting === false || useXRCamera === false ) {
 
 			let projectionMatrixNeedsUpdate = false;
 
@@ -63297,7 +63570,7 @@ class Renderer {
 
 		// handle XR
 
-		if ( xr.enabled === true && xr.isPresenting === true ) {
+		if ( useXRCamera === true && xr.enabled === true && xr.isPresenting === true ) {
 
 			if ( xr.cameraAutoUpdate === true ) xr.updateCamera( camera );
 			camera = xr.getCamera(); // use XR camera for rendering
@@ -63588,7 +63861,8 @@ class Renderer {
 	 * @param {Object3D} scene - The scene or 3D object to precompile.
 	 * @param {Camera} camera - The camera that is used to render the scene.
 	 * @param {Scene} targetScene - If the first argument is a 3D object, this parameter must represent the scene the 3D object is going to be added.
-	 * @return {function(Object3D, Camera, ?Scene): Promise|undefined} A Promise that resolves when the compile has been finished.
+	 * @param {onProgressCallback} [onProgress] - Executed while the compilation is in progress.
+	 * @return {function(Object3D, Camera, ?Scene, ?onProgressCallback): Promise|undefined} A Promise that resolves when the compile has been finished.
 	 */
 	get compile() {
 
@@ -65773,7 +66047,7 @@ ${ flowData.code }
 
 					snippet = `${typePrefix}sampler3D ${ uniform.name };`;
 
-				} else if ( texture.compareFunction && textureNode.compareNode !== null ) {
+				} else if ( texture.compareFunction && textureNode.isPlainGather() === false ) {
 
 					if ( texture.isArrayTexture === true ) {
 
@@ -66982,8 +67256,9 @@ class Backend {
 	 * @abstract
 	 * @param {ComputePipeline} computePipeline - The compute pipeline.
 	 * @param {Array<BindGroup>} bindings - The bindings.
+	 * @param {?Array<Promise>} [promises=null] - Optional compilation promises.
 	 */
-	createComputePipeline( /*computePipeline, bindings*/ ) { }
+	createComputePipeline( /*computePipeline, bindings, promises*/ ) { }
 
 	// cache key
 
@@ -67090,7 +67365,7 @@ class Backend {
 	 * @param {number} y - The y coordinate of the copy origin.
 	 * @param {number} width - The width of the copy.
 	 * @param {number} height - The height of the copy.
-	 * @param {number} faceIndex - The face index.
+	 * @param {number} faceIndex - The cube face, depth slice or array layer index.
 	 * @return {Promise<TypedArray>} A Promise that resolves with a typed array when the copy operation has finished.
 	 */
 	async copyTextureToBuffer( /*texture, x, y, width, height, faceIndex*/ ) {}
@@ -70929,7 +71204,7 @@ class WebGLTextureUtils {
 	 * @param {number} y - The y coordinate of the copy origin.
 	 * @param {number} width - The width of the copy.
 	 * @param {number} height - The height of the copy.
-	 * @param {number} faceIndex - The face index.
+	 * @param {number} faceIndex - The cube face, depth slice or array layer index.
 	 * @return {Promise<TypedArray>} A Promise that resolves with a typed array when the copy operation has finished.
 	 */
 	async copyTextureToBuffer( texture, x, y, width, height, faceIndex ) {
@@ -70942,9 +71217,17 @@ class WebGLTextureUtils {
 
 		backend.state.bindFramebuffer( gl.READ_FRAMEBUFFER, fb );
 
-		const target = texture.isCubeTexture ? gl.TEXTURE_CUBE_MAP_POSITIVE_X + faceIndex : gl.TEXTURE_2D;
+		if ( texture.isData3DTexture || texture.isDataArrayTexture || texture.isArrayTexture ) {
 
-		gl.framebufferTexture2D( gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT0, target, textureGPU, 0 );
+			gl.framebufferTextureLayer( gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT0, textureGPU, 0, faceIndex );
+
+		} else {
+
+			const target = texture.isCubeTexture ? gl.TEXTURE_CUBE_MAP_POSITIVE_X + faceIndex : gl.TEXTURE_2D;
+
+			gl.framebufferTexture2D( gl.READ_FRAMEBUFFER, gl.COLOR_ATTACHMENT0, target, textureGPU, 0 );
+
+		}
 
 		const typedArrayType = this._getTypedArrayType( glType );
 		const bytesPerTexel = this._getBytesPerTexel( glType, glFormat );
@@ -73321,7 +73604,7 @@ class WebGLBackend extends Backend {
 	 * @param {number} y - The y coordinate of the copy origin.
 	 * @param {number} width - The width of the copy.
 	 * @param {number} height - The height of the copy.
-	 * @param {number} faceIndex - The face index.
+	 * @param {number} faceIndex - The cube face, depth slice or array layer index.
 	 * @return {Promise<TypedArray>} A Promise that resolves with a typed array when the copy operation has finished.
 	 */
 	async copyTextureToBuffer( texture, x, y, width, height, faceIndex ) {
@@ -73605,10 +73888,11 @@ class WebGLBackend extends Backend {
 	 *
 	 * @param {ComputePipeline} computePipeline - The compute pipeline.
 	 * @param {Array<BindGroup>} bindings - The bindings.
+	 * @param {?Array<Promise>} [promises=null] - Optional compilation promises.
 	 */
-	createComputePipeline( computePipeline, bindings ) {
+	createComputePipeline( computePipeline, bindings, promises = null ) {
 
-		const { state, gl } = this;
+		const { gl } = this;
 
 		// Program
 
@@ -73651,19 +73935,6 @@ class WebGLBackend extends Backend {
 
 		gl.linkProgram( programGPU );
 
-		if ( gl.getProgramParameter( programGPU, gl.LINK_STATUS ) === false ) {
-
-			this._logProgramError( programGPU, fragmentShader, vertexShader );
-
-
-		}
-
-		state.useProgram( programGPU );
-
-		// Bindings
-
-		this._setupBindings( bindings, programGPU );
-
 		const attributeNodes = computeProgram.attributes;
 		const attributes = [];
 		const transformBuffers = [];
@@ -73690,13 +73961,72 @@ class WebGLBackend extends Backend {
 
 		}
 
-		//
+		// Store pipeline data
 
 		this.set( computePipeline, {
 			programGPU,
+			fragmentShader,
+			vertexShader,
 			transformBuffers,
 			attributes
 		} );
+
+		if ( promises !== null && this.parallel ) {
+
+			const parallel = this.parallel;
+
+			const p = new Promise( ( resolve ) => {
+
+				const checkStatus = () => {
+
+					if ( gl.getProgramParameter( programGPU, parallel.COMPLETION_STATUS_KHR ) ) {
+
+						this._completeComputeCompile( computePipeline, bindings );
+						resolve();
+
+					} else {
+
+						requestAnimationFrame( checkStatus );
+
+					}
+
+				};
+
+				checkStatus();
+
+			} );
+
+			promises.push( p );
+			return;
+
+		}
+
+		// Sync fallback
+		this._completeComputeCompile( computePipeline, bindings );
+
+	}
+
+	/**
+	 * Completes the compute pipeline setup for the given compute pipeline.
+	 *
+	 * @param {ComputePipeline} computePipeline - The compute pipeline.
+	 * @param {Array<BindGroup>} bindings - Array of bind groups.
+	 */
+	_completeComputeCompile( computePipeline, bindings ) {
+
+		const { state, gl } = this;
+		const { programGPU, fragmentShader, vertexShader } = this.get( computePipeline );
+
+		if ( gl.getProgramParameter( programGPU, gl.LINK_STATUS ) === false ) {
+
+			this._logProgramError( programGPU, fragmentShader, vertexShader );
+
+		}
+
+		state.useProgram( programGPU );
+
+		// Bindings (must be after link completion)
+		this._setupBindings( bindings, programGPU );
 
 	}
 
@@ -75363,10 +75693,21 @@ class WebGPUUtils {
 
 		} else if ( texture.isDepthTexture && ! texture.renderTarget ) {
 
-			const renderer = this.backend.renderer;
-			const renderTarget = renderer.getRenderTarget();
+			const textureData = this.backend.get( texture );
 
-			samples = renderTarget ? renderTarget.samples : renderer.currentSamples;
+			if ( textureData.texture !== undefined ) {
+
+				// use the effective sample count of the allocated texture
+
+				samples = textureData.texture.sampleCount;
+
+			} else {
+
+				// otherwise use the current samples of the renderer
+
+				samples = this.backend.renderer.currentSamples;
+
+			}
 
 		} else if ( texture.renderTarget ) {
 
@@ -77264,10 +77605,12 @@ class WebGPUTextureUtils {
 		const texture = binding.texture;
 		const textureNode = binding.textureNode;
 
+		const isComparison = texture.isDepthTexture === true && texture.compareFunction !== null && textureNode.isPlainGather() === false && backend.hasCompatibility( Compatibility.TEXTURE_COMPARE );
+
 		const samplerKey = texture.minFilter + '-' + texture.magFilter + '-' +
 			texture.wrapS + '-' + texture.wrapT + '-' + ( texture.wrapR || '0' ) + '-' +
 			texture.anisotropy + '-' + ( texture.isDepthTexture === true ? 1 : 0 ) + '-' +
-			( texture.compareFunction !== null && textureNode.compareNode !== null ? texture.compareFunction : 0 );
+			( isComparison ? texture.compareFunction : 0 );
 
 		let samplerData = this._samplerCache.get( samplerKey );
 
@@ -77281,7 +77624,7 @@ class WebGPUTextureUtils {
 			_samplerDescriptor.mipmapFilter = this._convertMipmapFilterMode( texture.minFilter );
 
 			// Depth textures without compare function must use non-filtering (nearest) sampling
-			if ( texture.isDepthTexture && ( texture.compareFunction === null || textureNode.compareNode === null ) ) {
+			if ( texture.isDepthTexture && isComparison === false ) {
 
 				_samplerDescriptor.magFilter = GPUFilterMode.Nearest;
 				_samplerDescriptor.minFilter = GPUFilterMode.Nearest;
@@ -77297,7 +77640,7 @@ class WebGPUTextureUtils {
 
 			}
 
-			if ( texture.isDepthTexture && texture.compareFunction !== null && textureNode.compareNode !== null && backend.hasCompatibility( Compatibility.TEXTURE_COMPARE ) ) {
+			if ( isComparison ) {
 
 				_samplerDescriptor.compare = _compareToWebGPU[ texture.compareFunction ];
 
@@ -77871,7 +78214,7 @@ class WebGPUTextureUtils {
 	 * @param {number} y - The y coordinate of the copy origin.
 	 * @param {number} width - The width of the copy.
 	 * @param {number} height - The height of the copy.
-	 * @param {number} faceIndex - The face index.
+	 * @param {number} faceIndex - The cube face, depth slice or array layer index.
 	 * @return {Promise<TypedArray>} A Promise that resolves with a typed array when the copy operation has finished.
 	 */
 	async copyTextureToBuffer( texture, x, y, width, height, faceIndex ) {
@@ -79004,6 +79347,7 @@ const wgslTypeLib$1 = {
 	'mat4x4f': 'mat4',
 
 	'sampler': 'sampler',
+	'sampler_comparison': 'samplerComparison',
 
 	'texture_1d': 'texture',
 
@@ -81280,7 +81624,7 @@ ${ flowData.code }
 
 				if ( needsSampler ) {
 
-					if ( this.isSampleCompare( texture ) && textureNode.compareNode !== null ) {
+					if ( this.isSampleCompare( texture ) && textureNode.isPlainGather() === false ) {
 
 						bindingSnippets.push( `@binding( ${ uniformIndexes.binding ++ } ) @group( ${ uniformIndexes.group } ) var ${ uniform.name }_sampler : sampler_comparison;` );
 
@@ -81893,8 +82237,8 @@ const typedArraysToVertexFormatPrefix = new Map( [
 	[ Uint8Array, [ 'uint8', 'unorm8' ]],
 	[ Int16Array, [ 'sint16', 'snorm16' ]],
 	[ Uint16Array, [ 'uint16', 'unorm16' ]],
-	[ Int32Array, [ 'sint32', 'snorm32' ]],
-	[ Uint32Array, [ 'uint32', 'unorm32' ]],
+	[ Int32Array, [ 'sint32' ]],
+	[ Uint32Array, [ 'uint32' ]],
 	[ Float32Array, [ 'float32', ]],
 ] );
 
@@ -81910,9 +82254,7 @@ const typedAttributeToVertexFormatPrefix = new Map( [
 
 const typeArraysToVertexFormatPrefixForItemSize1 = new Map( [
 	[ Int32Array, 'sint32' ],
-	[ Int16Array, 'sint32' ], // patch for INT16
 	[ Uint32Array, 'uint32' ],
-	[ Uint16Array, 'uint32' ], // patch for UINT16
 	[ Float32Array, 'float32' ]
 ] );
 
@@ -81961,7 +82303,7 @@ class WebGPUAttributeUtils {
 			let array = bufferAttribute.array;
 
 			// patch for INT16 and UINT16
-			if ( attribute.normalized === false ) {
+			if ( attribute.normalized === false && attribute.isInterleavedBufferAttribute !== true ) {
 
 				if ( array.constructor === Int16Array || array.constructor === Int8Array ) {
 
@@ -82197,13 +82539,6 @@ class WebGPUAttributeUtils {
 						arrayStride = Math.floor( ( arrayStride + 3 ) / 4 ) * 4;
 
 					}
-
-				}
-
-				// patch for INT16 and UINT16
-				if ( geometryAttribute.normalized === false && ( geometryAttribute.array.constructor === Int16Array || geometryAttribute.array.constructor === Uint16Array ) ) {
-
-					arrayStride = 4;
 
 				}
 
@@ -83030,7 +83365,7 @@ class WebGPUBindingUtils {
 
 				if ( binding.texture.isDepthTexture ) {
 
-					if ( binding.texture.compareFunction !== null && binding.textureNode.compareNode !== null && backend.hasCompatibility( Compatibility.TEXTURE_COMPARE ) ) {
+					if ( binding.texture.compareFunction !== null && binding.textureNode.isPlainGather() === false && backend.hasCompatibility( Compatibility.TEXTURE_COMPARE ) ) {
 
 						sampler.type = GPUSamplerBindingType.Comparison;
 
@@ -83585,8 +83920,9 @@ class WebGPUPipelineUtils {
 	 *
 	 * @param {ComputePipeline} pipeline - The compute pipeline.
 	 * @param {Array<BindGroup>} bindings - The bindings.
+	 * @param {?Array<Promise>} [promises=null] - Optional compilation promises.
 	 */
-	createComputePipeline( pipeline, bindings ) {
+	createComputePipeline( pipeline, bindings, promises = null ) {
 
 		const backend = this.backend;
 		const device = backend.device;
@@ -83623,23 +83959,87 @@ class WebGPUPipelineUtils {
 		_computePipelineDescriptor.compute = computeProgram;
 		_computePipelineDescriptor.layout = pipelineLayout;
 
-		pipelineGPU.pipeline = device.createComputePipeline( _computePipelineDescriptor );
+		if ( promises === null ) {
 
-		_computePipelineDescriptor.reset();
+			pipelineGPU.pipeline = device.createComputePipeline( _computePipelineDescriptor );
 
-		device.popErrorScope().then( ( err ) => {
+			_computePipelineDescriptor.reset();
 
-			if ( err !== null ) {
+			device.popErrorScope().then( ( err ) => {
 
-				pipelineGPU.error = true;
+				if ( err !== null ) {
 
-				error( `WebGPURenderer: Compute pipeline creation failed (${ pipelineLabel }): ${ err.message }` );
+					pipelineGPU.error = true;
 
-				this._reportShaderDiagnostics( [ { program: computeStage, module: computeProgram.module } ], pipelineLabel );
+					error( `WebGPURenderer: Compute pipeline creation failed (${ pipelineLabel }): ${ err.message }` );
 
-			}
+					this._reportShaderDiagnostics( [ { program: computeStage, module: computeProgram.module } ], pipelineLabel );
 
-		} );
+				}
+
+			} );
+
+		} else {
+
+			const promise = new Promise( async ( resolve /*, reject*/ ) => {
+
+				try {
+
+					let asyncError = null;
+					let pipelinePromise = null;
+
+					try {
+
+						pipelinePromise = device.createComputePipelineAsync( _computePipelineDescriptor );
+
+					} catch ( err ) {
+
+						asyncError = err;
+
+					}
+
+					_computePipelineDescriptor.reset();
+
+					if ( pipelinePromise !== null ) {
+
+						try {
+
+							pipelineGPU.pipeline = await pipelinePromise;
+
+						} catch ( err ) {
+
+							asyncError = err;
+
+						}
+
+					}
+
+					const errorScope = await device.popErrorScope();
+
+					if ( errorScope !== null || asyncError !== null ) {
+
+						pipelineGPU.error = true;
+
+						const reason = ( errorScope && errorScope.message ) || ( asyncError && asyncError.message ) || 'unknown';
+						error( `WebGPURenderer: Async compute pipeline creation failed (${ pipelineLabel }): ${ reason }` );
+
+						await this._reportShaderDiagnostics( [ { program: computeStage, module: computeProgram.module } ], pipelineLabel );
+
+					}
+
+				} finally {
+
+					// Guarantee resolution so `compileComputeAsync`'s Promise.all cannot hang on an
+					// unexpected throw from any await above.
+					resolve();
+
+				}
+
+			} );
+
+			promises.push( promise );
+
+		}
 
 	}
 
@@ -86941,7 +87341,7 @@ class WebGPUBackend extends Backend {
 	 * @param {number} y - The y coordinate of the copy origin.
 	 * @param {number} width - The width of the copy.
 	 * @param {number} height - The height of the copy.
-	 * @param {number} faceIndex - The face index.
+	 * @param {number} faceIndex - The cube face, depth slice or array layer index.
 	 * @return {Promise<TypedArray>} A Promise that resolves with a typed array when the copy operation has finished.
 	 */
 	async copyTextureToBuffer( texture, x, y, width, height, faceIndex ) {
@@ -87049,10 +87449,11 @@ class WebGPUBackend extends Backend {
 	 *
 	 * @param {ComputePipeline} computePipeline - The compute pipeline.
 	 * @param {Array<BindGroup>} bindings - The bindings.
+	 * @param {?Array<Promise>} [promises=null] - Optional compilation promises.
 	 */
-	createComputePipeline( computePipeline, bindings ) {
+	createComputePipeline( computePipeline, bindings, promises = null ) {
 
-		this.pipelineUtils.createComputePipeline( computePipeline, bindings );
+		this.pipelineUtils.createComputePipeline( computePipeline, bindings, promises );
 
 	}
 
